@@ -1,110 +1,167 @@
-/* General Reset */
-* {
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Body Styling */
-body {
-    background-color: #f5f5f5;
-    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 20px;
+    transition: background-color 0.3s ease;
 }
 
-/* Header */
+/* Add padding and margin to header for better spacing */
 header {
-    margin-bottom: 30px;
+    width: 100%;
     text-align: center;
+    padding: 20px 0;
 }
 
+/* Main container for content */
+#content {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px 0;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card-style layout for sections */
+.card {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Improve typography for the title */
 header h1 {
     font-size: 2.5rem;
-    color: #007acc;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-/* Main Section Styling */
-main {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-}
-
-/* Upload Container */
-.upload-container {
-    margin-bottom: 20px;
-}
-
-.upload-label {
-    display: inline-block;
-    background-color: #007acc;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.upload-label:hover {
-    background-color: #005a99;
-}
-
-#file-input {
+/* Styling for the file upload input */
+input[type="file"] {
     display: none;
 }
 
-/* Image Preview */
-#preview {
-    margin-top: 20px;
-    max-width: 100%;
-    border-radius: 10px;
-    display: block;
-}
-
-/* Button Styling */
-#process-btn {
-    margin: 20px 0;
-    padding: 10px 20px;
-    background-color: #28a745;
+label {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #00bcd4;
     color: white;
-    border: none;
-    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
 }
 
-#process-btn:hover {
-    background-color: #218838;
+label:hover {
+    background-color: #008c9e;
 }
 
-/* Textarea Styling */
-#output-text {
+/* Textarea for displaying extracted text */
+textarea {
     width: 100%;
     height: 150px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    resize: none;
     margin-top: 20px;
-    background-color: #f0f0f0;
-    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+    transition: border-color 0.3s ease;
 }
 
-/* Footer */
-footer {
-    margin-top: 30px;
-    text-align: center;
+textarea:focus {
+    border-color: #00bcd4;
+    outline: none;
 }
 
-footer p {
-    color: #888;
-    font-size: 0.9rem;
+/* Button container for spacing */
+#content .card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* Adds spacing between the buttons in each card */
+}
+
+/* Style for buttons with added spacing */
+button {
+    padding: 12px 25px;
+    background-color: #2196f3;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px 0; /* Adds vertical spacing between buttons */
+}
+
+button:hover {
+    background-color: #1e88e5;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(33, 150, 243, 0.8);
+}
+
+/* Dark Mode UI */
+body.dark-mode {
+    background-color: #121212;
+}
+
+body.dark-mode #content {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode textarea {
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark-mode button {
+    background-color: #4caf50;
+}
+
+body.dark-mode button:hover {
+    background-color: #66bb6a;
+}
+
+body.dark-mode .card {
+    background-color: #2b2b2b;
+}
+
+/* Error messages and feedback */
+.error {
+    background-color: #ff4444;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design: Adjusting layout for smaller screens */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #content {
+        width: 90%;
+        padding: 20px;
+    }
 }
